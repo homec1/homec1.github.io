@@ -1023,6 +1023,11 @@ PODPRITE NAS Style
 --------------------------------------------- 
 */
 
+.podprite{
+  max-width: 800px;
+  margin: 0 auto 0;
+}
+
 .podprite .srce-item:hover .srce img {
   margin-top: -10px;
 }
@@ -1043,6 +1048,7 @@ PODPRITE NAS Style
   position: absolute;
   right: 0;
   top: -125px;
+  right: 20%;
 }
 
 .podprite .srce-item .srce img {
@@ -1056,9 +1062,7 @@ PODPRITE NAS Style
   background-color: #cfcfc439;
   margin-bottom: 30px;
   transition: all .4s;
-  width: 800px;
   text-align: center;
-  margin-left: -190px;
 }
 
 .podprite .srce-item h4 {
@@ -1083,6 +1087,7 @@ FOOTER Style
 
 footer {
   margin-top: 50px;
+  padding: 60px;
   position: relative;
   background-color: #ffdf76;
   vertical-align: middle;
@@ -1092,7 +1097,6 @@ footer {
 
 footer p {
   text-align: center;
-  line-height: 150px;
   color: #112434;
   font-weight: 400;
 }

@@ -671,41 +671,31 @@ PRIHAJAJOCI DOGODKI Style
   margin-bottom: 100px;
 }
 
-.dogodki .item {
+.dogodki .seznam{
+  display: flex;
+  flex-direction: column; 
+}
+
+.dogodki .seznam .dogodek{
+  width: 100%;
   background-color: #cfcfc439;
   border-radius: 25px;
   position: relative;
-  padding: 40px;
   margin-bottom: 96px;
+  padding-left: 340px;   /* naredi prostor za sliko */
+  padding-right: 120px; /* naredi prostor za povezavo */
 }
 
-.dogodki .item .image {
-  position: relative;
-}
-
-.dogodki .item .image img {
-  position: absolute;
+.dogodki .dogodek .image{
   border-radius: 25px;
   max-width: 260px;
-  left: 0;
-  top: -70px;
+  overflow: hidden;
+  position: absolute;
+  top: -40px;
+  left: 40px; 
 }
 
-.dogodki .item ul li {
-  display: inline-block;
-  width: 17.5%;
-  vertical-align: middle;
-}
-
-.dogodki .item ul li:first-child {
-  width: 35%;
-}
-
-.dogodki .item ul li:nth-of-type(2) {
-  width: 28%;
-}
-
-.dogodki .item ul li span.category {
+.dogodki .dogodek .category{
   font-size: 14px;
   text-transform: uppercase;
   color: #112434;
@@ -714,41 +704,97 @@ PRIHAJAJOCI DOGODKI Style
   border-radius: 25px;
   font-weight: 500;
   display: inline-block;
-  margin-bottom: 20px;
+  margin-top: -40px;
+  margin-bottom: 20px; 
+  margin-left: -5px; 
+} 
+
+.dogodki .dogodek .content{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 20px 0px;
+  min-height: 160px;
 }
 
-.dogodki .item ul li h4 {
+.dogodki .dogodek h4 {
   font-size: 22px;
-  font-weight: 600;
+  font-weight: 600; 
 }
 
-.dogodki .item ul li span {
+.dogodki .dogodek span {
   display: inline-block;
   font-size: 14px;
   color: #4a4a4a;
   margin-bottom: 10px;
 }
 
-.dogodki .item ul li h6 {
+.dogodki .dogodek h6 {
   font-size: 16px;
   color: #112434;
   font-weight: 600;
 }
 
-.dogodki .item a {
+.dogodki .dogodek a {
   position: absolute;
-  right: 0;
+  display: block;
   top: 22px;
+  right: 0;
   background-color: #112434;
   width: 60px;
   height: 120px;
-  display: inline-block;
-  text-align: center;
   line-height: 120px;
   font-size: 18px;
-  z-index: 1;
+  padding-left: 30px;
   color: #fff;
   border-radius: 60px 0px 0px 60px;
+  transition: ease-in-out .2s;
+}
+
+.dogodki .dogodek a:hover{
+  background-color: #2a4154;
+  width: 65px;
+}
+
+@media (max-width: 1200px) {
+  .dogodki .dogodek .content{
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 800px){
+  .dogodki .seznam .dogodek{
+    width: 100%;
+    background-color: #cfcfc439;
+    border-radius: 25px;
+    position: relative;
+    margin-bottom: 96px;
+    padding-left: 20px; 
+    padding-right: 20px;
+  }
+
+  .dogodki .dogodek .image{
+    border-radius: 10px;
+    max-width: 120px; 
+    position: relative;
+    top: 0;
+    left: 0;
+    margin-top: -40px;
+  }
+
+  .dogodki .dogodek a {
+    top: auto;
+    bottom: 22px;
+    right: 0;
+    width: 50px;
+    height: 60px;
+    line-height: 60px;
+    font-size: 18px;
+    padding-left: 15px;
+  }
 }
 
 /* 

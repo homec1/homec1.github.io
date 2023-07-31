@@ -671,41 +671,31 @@ PRIHAJAJOCI DOGODKI Style
   margin-bottom: 100px;
 }
 
-.dogodki .item {
+.dogodki .seznam{
+  display: flex;
+  flex-direction: column; 
+}
+
+.dogodki .seznam .dogodek{
+  width: 100%;
   background-color: #cfcfc439;
   border-radius: 25px;
   position: relative;
-  padding: 40px;
   margin-bottom: 96px;
+  padding-left: 340px;   /* naredi prostor za sliko */
+  padding-right: 120px; /* naredi prostor za povezavo */
 }
 
-.dogodki .item .image {
-  position: relative;
-}
-
-.dogodki .item .image img {
-  position: absolute;
+.dogodki .dogodek .image{
   border-radius: 25px;
   max-width: 260px;
-  left: 0;
-  top: -70px;
+  overflow: hidden;
+  position: absolute;
+  top: -40px;
+  left: 40px; 
 }
 
-.dogodki .item ul li {
-  display: inline-block;
-  width: 17.5%;
-  vertical-align: middle;
-}
-
-.dogodki .item ul li:first-child {
-  width: 35%;
-}
-
-.dogodki .item ul li:nth-of-type(2) {
-  width: 28%;
-}
-
-.dogodki .item ul li span.category {
+.dogodki .dogodek .category{
   font-size: 14px;
   text-transform: uppercase;
   color: #112434;
@@ -714,41 +704,97 @@ PRIHAJAJOCI DOGODKI Style
   border-radius: 25px;
   font-weight: 500;
   display: inline-block;
-  margin-bottom: 20px;
+  margin-top: -40px;
+  margin-bottom: 20px; 
+  margin-left: -5px; 
+} 
+
+.dogodki .dogodek .content{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 20px 0px;
+  min-height: 160px;
 }
 
-.dogodki .item ul li h4 {
+.dogodki .dogodek h4 {
   font-size: 22px;
-  font-weight: 600;
+  font-weight: 600; 
 }
 
-.dogodki .item ul li span {
+.dogodki .dogodek span {
   display: inline-block;
   font-size: 14px;
   color: #4a4a4a;
   margin-bottom: 10px;
 }
 
-.dogodki .item ul li h6 {
+.dogodki .dogodek h6 {
   font-size: 16px;
   color: #112434;
   font-weight: 600;
 }
 
-.dogodki .item a {
+.dogodki .dogodek a {
   position: absolute;
-  right: 0;
+  display: block;
   top: 22px;
+  right: 0;
   background-color: #112434;
   width: 60px;
   height: 120px;
-  display: inline-block;
-  text-align: center;
   line-height: 120px;
   font-size: 18px;
-  z-index: 1;
+  padding-left: 30px;
   color: #fff;
   border-radius: 60px 0px 0px 60px;
+  transition: ease-in-out .2s;
+}
+
+.dogodki .dogodek a:hover{
+  background-color: #2a4154;
+  width: 65px;
+}
+
+@media (max-width: 1200px) {
+  .dogodki .dogodek .content{
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 800px){
+  .dogodki .seznam .dogodek{
+    width: 100%;
+    background-color: #cfcfc439;
+    border-radius: 25px;
+    position: relative;
+    margin-bottom: 96px;
+    padding-left: 20px; 
+    padding-right: 20px;
+  }
+
+  .dogodki .dogodek .image{
+    border-radius: 10px;
+    max-width: 120px; 
+    position: relative;
+    top: 0;
+    left: 0;
+    margin-top: -40px;
+  }
+
+  .dogodki .dogodek a {
+    top: auto;
+    bottom: 22px;
+    right: 0;
+    width: 50px;
+    height: 60px;
+    line-height: 60px;
+    font-size: 18px;
+    padding-left: 15px;
+  }
 }
 
 /* 
@@ -908,6 +954,13 @@ STATISTIKA style
   border-bottom-right-radius: 500px;
 }
 
+@media (max-width: 500px) {
+  .statistika:before {
+    border-top-right-radius: 100px;
+    border-bottom-right-radius: 100px;
+  }
+}
+
 .statistika:after {
   background: url(../images/contact-dec-01.png);
   position: absolute;
@@ -950,36 +1003,55 @@ VODITELJI style
 --------------------------------------------- 
 */
 
-.skvo {
-  margin-top: 50px;
-  padding-top: 100px;
+.skvo{
+  margin-bottom: 200px;
 }
 
-.voditelj {
+.skvo .section-heading{
+  text-align: center;
+  margin-bottom: -60px;
+}
+
+.skvo h2{
+  text-align: center; 
+  margin: 100px 0 20px;
+}
+
+.voditelji{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.voditelj{
+  width: 100%;
+  max-width: 300px;
   position: relative;
-  margin-bottom: 100px;
+  border-radius: 25px;
+  padding: 30px 30px 40px 30px;
+  background-color: #ffdf76d3;
+  margin-top: 120px;
 }
 
-.voditelj:hover img {
-  top: -120px;
+.voditelj img{
+  border-radius: 100%;
+  position: relative;
+  display: block;
+  margin-top: -100px;
+  margin-bottom: 20px;
+  top: 0;
+  transition: ease-in-out all .2s;
 }
 
-.voditelj img {
-  max-width: 220px;
-  border-radius: 50%;
-  position: absolute;
-  top: -110px;
-  left: 50%;
-  transform: translateX(-110px);
-  transition: all .3s;
+.voditelj:hover img{
+  top: -10px;
 }
 
 .voditelj .main-content {
-  border-radius: 25px;
-  padding: 140px 30px 40px 30px;
-  background-color: #ffdf76d3;
+
   text-align: center;
-  margin-top: 80px;
+  height: 100%;
 }
 
 .voditelj .main-content span.category {
@@ -1017,11 +1089,73 @@ VODITELJI style
   color: #fff;
 }
 
+@media (max-width: 1000px) {
+  .voditelji {
+    display: block;
+    padding: 0 20px;
+    padding-left: 70px;
+  }
+
+  .skvo h2{
+    text-align: center; 
+    margin: 40px 0 10px;
+  }
+
+  .skvo .section-heading{
+    margin-bottom: -20px;
+  }
+  
+  .voditelji .voditelj {
+    width: 100%;
+    max-width: 100%;
+    display: flex;
+    align-items: center;
+    margin: 20px 0;
+    padding: 20px;
+  }
+
+  .voditelj img{
+    width: 100px;
+    margin: 0;
+    margin-left: -70px;
+    position: static;
+  }
+
+  .voditelj .main-content {
+    text-align: left;
+    padding-left: 20px;
+  }
+}
+
+@media (max-width: 500px) {
+  .voditelji {
+    padding-left: 60px;
+  }
+
+  .voditelj img{
+    width: 80px;
+    margin: 0;
+    margin-left: -60px;
+    position: static;
+  }
+
+  .voditelj .main-content h4{
+    font-size: 19px;
+    margin: 5px 0 10px;
+  }
+
+}
+
 /* 
 ---------------------------------------------
 PODPRITE NAS Style
 --------------------------------------------- 
 */
+
+.podprite{
+  max-width: 800px;
+  margin: 0 auto;
+}
 
 .podprite .srce-item:hover .srce img {
   margin-top: -10px;
@@ -1043,6 +1177,7 @@ PODPRITE NAS Style
   position: absolute;
   right: 0;
   top: -125px;
+  right: 20%;
 }
 
 .podprite .srce-item .srce img {
@@ -1056,9 +1191,7 @@ PODPRITE NAS Style
   background-color: #cfcfc439;
   margin-bottom: 30px;
   transition: all .4s;
-  width: 800px;
   text-align: center;
-  margin-left: -190px;
 }
 
 .podprite .srce-item h4 {
@@ -1083,6 +1216,7 @@ FOOTER Style
 
 footer {
   margin-top: 50px;
+  padding: 60px;
   position: relative;
   background-color: #ffdf76;
   vertical-align: middle;
@@ -1092,7 +1226,6 @@ footer {
 
 footer p {
   text-align: center;
-  line-height: 150px;
   color: #112434;
   font-weight: 400;
 }
